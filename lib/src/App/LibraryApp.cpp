@@ -1,4 +1,5 @@
 #define BOOK_SIZE 2 //change the value here to change the size of the array
+#pragma warning(disable: 0020)
 
 #include <iostream>	
 #include <windows.h>
@@ -14,10 +15,12 @@ using namespace std;
 
 LibraryApp::BookSearch bookSearch;
 LibraryApp::BookSorting bookSorting;
-
+//Array of structures
 LibraryApp::Book book[BOOK_SIZE];
 bool isFilled = false;
 
+// The Print function, is not a function of any class / functions
+// This is done for ease of use
 void Print()
 {
 	cout << "[==============================]\n";
@@ -29,7 +32,7 @@ void Print()
 		cout << "* Genre: " << book[i].genre << endl,
 		cout << "[==============================]\n";
 }
-
+// Checks if the array of structures is full
 void LibraryApp::checkIsFilled(bool isFilled, void func())
 {
 	if (isFilled)
@@ -39,7 +42,7 @@ void LibraryApp::checkIsFilled(bool isFilled, void func())
 		system("pause"),
 		LibraryApp::LibraryAppStartScreen();
 }
-
+// LibraryApp application Start Screen
 void LibraryApp::LibraryAppStartScreen()
 {
 	system("cls");
@@ -92,7 +95,7 @@ void LibraryApp::LibraryAppStartScreen()
 		break;
 	}
 }
-
+// Getting data from the keyboard
 void LibraryApp::FillData()
 {
 	cin.ignore();
@@ -124,7 +127,7 @@ void LibraryApp::FillData()
 
 	LibraryApp::LibraryAppStartScreen();
 }
-
+// Shows the data written to the array
 void LibraryApp::ShowData()
 {
 	system("cls");
@@ -154,7 +157,7 @@ void LibraryApp::ShowData()
 		LibraryApp::LibraryAppStartScreen();
 	}
 }
-
+// Changes the book
 void LibraryApp::EditBook()
 {
 	system("cls");
@@ -234,7 +237,7 @@ void LibraryApp::EditBook()
 		LibraryApp::LibraryAppStartScreen();
 	}
 }
-
+// Shows all data as a list
 void LibraryApp::ShowAllData()
 {
 	system("cls");

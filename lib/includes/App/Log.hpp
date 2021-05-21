@@ -1,7 +1,11 @@
 #pragma once
 #include <spdlog/spdlog.h>
-
+// Third-party library, required for log output
+// GitHub: https://github.com/gabime/spdlog
 namespace Log {
+// Determining whether the NDEBUG preprocessor exists
+// If not defined, we do not use a function from a third-party library
+// There is no output of logs if the project is set to Release
 #ifdef NDEBUG
 
 #define LOG_INFO(...)	

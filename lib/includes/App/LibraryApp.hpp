@@ -1,5 +1,6 @@
 #pragma once
-
+// The main namespace for the LibraryApp application
+// Includes: structure, functions, class.
 namespace LibraryApp {
 	struct Book {
 		string title;
@@ -17,7 +18,7 @@ namespace LibraryApp {
 	void ShowAllData();
 	void fBookSearch();
 	void fBookSorting();
-
+	// The BookSearch class used to combine search functions (for convenience)
 	class BookSearch {
 	private:
 		void Author(LibraryApp::Book book[], int bookSize);
@@ -25,7 +26,7 @@ namespace LibraryApp {
 	public:
 		void SearchBookBy(LibraryApp::Book book[], int bookSize);
 	};
-
+	// The BookSearch class, used to combine sorting functions (for convenience)
 	class BookSorting {
 	private:
 		bool isIncreasing = true;
