@@ -49,18 +49,16 @@ void FileManager::SaveToFile(std::string name, LibraryApp::Book book[], int book
 
 void FileManager::readFromFile(string name, vector<int> arr)
 {
-	int intLine = 0;
-	string line;
-	ifstream input("../../logs/output/test.txt" /*+ name + ".txt"*/);
+	char buff[50];
+	ifstream input("../logs/test.txt" /*+ name + ".txt"*/);
 
 	if (input.is_open())
 	{
-		while (getline(cin, line))
-		{
-			cout << line << " ";
-		}
+		input.getline(buff, 50);
+		arr.push_back((int)buff);
 	}
 
 	input.close();
-	LOG_INFO("Readed successfully!");
+	LOG_INFO("Readed successfully!\n");
+	system("pause");
 }
